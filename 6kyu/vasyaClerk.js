@@ -18,17 +18,17 @@ function tickets(bills) {
         while (changeDue > 0) {
             if (register[25] < 1) {
                 return 'NO';
-            } else {
-                if (changeDue === 75 && register[50] > 0) {
-                    register[50]--;
-                    changeDue += -50;
-                }
-                if (changeDue >= 25) {
-                    register[25]--;
-                    changeDue += -25;
-                }
             }
             
+            if (changeDue === 75 && register[50] > 0) {
+                register[50]--;
+                changeDue += -50;
+            }
+
+            if (changeDue >= 25) {
+                register[25]--;
+                changeDue += -25;
+            }
         }
     }
     return 'YES';
